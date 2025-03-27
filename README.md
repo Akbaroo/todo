@@ -1,2 +1,2 @@
 # todo
-todo app > MVT and DRF
+todo app > MVT
