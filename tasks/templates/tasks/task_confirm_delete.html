@@ -1,9 +1,17 @@
 {% extends 'base.html' %}
+
+{% block page-header %}
+    <h2>آیا مطمئن هستید که می‌خواهید "{{ task.title }}" را حذف کنید؟</h2>
+{% endblock page-header %}
+
 {% block content %}
-<h2>آیا مطمئن هستید که می‌خواهید "{{ task.title }}" را حذف کنید؟</h2>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit">✅ بله، حذف شود</button>
-</form>
-<a href="{% url 'task_list' %}">🔙 خیر، بازگشت</a>
+<center>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">-----بله-----</button>
+    </form>
+    <button>
+        <a href="{% url 'tasks:task_list' %}">-----خیر-----</a>
+    </button>
+</center>
 {% endblock %}

@@ -1,10 +1,35 @@
 {% extends 'base.html' %}
+
+
+{% block page-header %}
+    <h1>{% if form.instance.pk %}ویرایش تسک{% else %}ایجاد تسک{% endif %}</h1>
+{% endblock page-header %}
+
 {% block content %}
-<h2>{% if form.instance.pk %}ویرایش تسک{% else %}ایجاد تسک{% endif %}</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">ذخیره</button>
-</form>
-<a href="{% url 'task_list' %}">🔙 بازگشت</a>
+
+
+    
+    
+    
+
+
+
+
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="my-5">
+                    <!-- * * SB Forms Contact Form * *-->
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit">ذخیره</button>
+                    </form>
+                    <a href="{% url 'tasks:task_list' %}">🔙 بازگشت</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 {% endblock %}

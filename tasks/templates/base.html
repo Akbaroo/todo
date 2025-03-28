@@ -1,14 +1,33 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block header %}
-    {% endblock header %}
-    <title>{% block title %}{% endblock title %}</title>
-</head>
-<body>
-    {% block content %}
-    {% endblock content %}
-</body>
+<html lang="fa">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>{% block title %}{% endblock title %}</title>
+        <link rel="icon" type="image/x-icon" href="{% static '/tasks/assets/favicon.ico' %}" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static '/tasks/css/styles.css' %}" rel="stylesheet" />
+        {% block header %}{% endblock header %}
+    </head>
+    <body dir='rtl'>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{% static "/tasks/assets/img/home-bg.jpg" %}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            {% block page-header %}{% endblock page-header %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        {% block content %}
+        {% endblock content %}
+        <!-- Core theme JS-->
+        <script src="{% static '/tasks/js/scripts.js' %}"></script>
+    </body>
 </html>
