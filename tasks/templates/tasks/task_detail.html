@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ task.title }}</h2>
+<p>{{ task.description }}</p>
+<p>وضعیت: {{ task.status }}</p>
+<p>دسته‌بندی: {{ task.category }}</p>
+<p>تاریخ سررسید: {{ task.due_date }}</p>
+
+{% endblock %}
