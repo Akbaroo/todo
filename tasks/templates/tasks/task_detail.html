@@ -7,5 +7,5 @@
 <p>دسته‌بندی: {{ task.category }}</p>
 <p>تاریخ سررسید: {{ task.due_date }}</p>
 <a href="{% url 'task_update' task.id %}">✏️ ویرایش</a>
-
+<a href="{% url 'task_delete' task.id %}">❌ حذف</a>
 {% endblock %}

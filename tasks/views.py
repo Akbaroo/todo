@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from .models import Task
 from .forms import TaskForm
@@ -38,6 +38,15 @@ class TaskUpdateView(LoginRequiredMixin, UpdateView):
     model = Task
     form_class = TaskForm
     template_name = 'tasks/task_form.html'
+    success_url = reverse_lazy('task_list')
+
+    def get_object(self):
+        return get_object_or_404(Task, id=self.kwargs['task_id'], user=self.request.user)
+    
+
+class TaskDeleteView(LoginRequiredMixin, DeleteView):
+    model = Task
+    template_name = 'tasks/task_confirm_delete.html'
     success_url = reverse_lazy('task_list')
 
     def get_object(self):

@@ -15,6 +15,7 @@
             - {{ task.due_date }}
             - {{ task.status }}
             <a href="{% url 'task_update' task.id %}">ویرایش</a>
+            <a href="{% url 'task_delete' task.id %}">❌</a>
         </li>
         {% endfor %}
     </ul>
