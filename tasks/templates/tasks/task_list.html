@@ -6,6 +6,7 @@
 
 {% block content %}
 <center>
+    <a href="{% url 'task_create' %}">+ ایجاد تسک جدید</a>
     <h2>list tasks</h2>
     <ul>
         {% for task in tasks %}
