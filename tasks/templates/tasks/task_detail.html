@@ -6,5 +6,6 @@
 <p>وضعیت: {{ task.status }}</p>
 <p>دسته‌بندی: {{ task.category }}</p>
 <p>تاریخ سررسید: {{ task.due_date }}</p>
+<a href="{% url 'task_update' task.id %}">✏️ ویرایش</a>
 
 {% endblock %}
