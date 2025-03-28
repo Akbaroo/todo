@@ -1,26 +1,26 @@
 {% extends 'base.html' %}
 
 {% block page-header %}
-    <h1>{{ task.title }}</h1>
+    <h1 class="text-center my-4">{{ task.title }}</h1>
 {% endblock page-header %}
 
 {% block content %}
-    <!-- Main Content-->
-    <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                <!-- Post preview-->
-                <div class="post-preview">
-                    <p>{{ task.description }}</p>
-                    <p>وضعیت: {{ task.status }}</p>
-                    <p>دسته‌بندی: {{ task.category }}</p>
-                    <p>تاریخ سررسید: {{ task.due_date }}</p>
-                    <a href="{% url 'tasks:task_update' task.id %}">✏️ ویرایش</a>
-                    <a href="{% url 'tasks:task_delete' task.id %}">❌ حذف</a>
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="card shadow-sm p-4">
+                <div class="mb-3">
+                    <p><strong>توضیحات:</strong> {{ task.description }}</p>
+                    <p><strong>وضعیت:</strong> {{ task.status }}</p>
+                    <p><strong>دسته‌بندی:</strong> {{ task.category }}</p>
+                    <p><strong>تاریخ سررسید:</strong> {{ task.due_date }}</p>
                 </div>
-                <!-- Divider-->
-                <hr class="my-4" />
-            <br><br><br><br><br><br><br><br><br>
+                <div class="d-flex justify-content-between">
+                    <a href="{% url 'tasks:task_update' task.id %}" class="btn btn-primary">✏️ ویرایش</a>
+                    <a href="{% url 'tasks:task_delete' task.id %}" class="btn btn-danger">❌ حذف</a>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 {% endblock %}
