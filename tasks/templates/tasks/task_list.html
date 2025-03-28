@@ -10,7 +10,7 @@
     <ul>
         {% for task in tasks %}
         <li>
-            - {{ task.title }}
+            - <a href="{% url 'task_detail' task.pk %}">{{ task.title }}</a>
             - {{ task.due_date }}
             - {{ task.status }}
         </li>
