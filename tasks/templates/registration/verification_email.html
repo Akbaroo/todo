@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>تأیید ایمیل</title>
+</head>
+<body style="font-family: Tahoma, sans-serif; direction: rtl;">
+    <p>سلام {{ user.username }} عزیز،</p>
+
+    <p>برای تأیید ایمیل خود، لطفاً روی لینک زیر کلیک کنید:</p>
+
+    <p>
+        <a href="{{ verify_url }}"
+            style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">
+            تأیید ایمیل
+        </a>
+    </p>
+
+    <p>اگر شما این درخواست را ارسال نکرده‌اید، لطفاً این ایمیل را نادیده بگیرید.</p>
+</body>
+</html>

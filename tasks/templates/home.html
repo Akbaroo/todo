@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+
+
+{% block page-header %}
+{% if messages %}
+    {% for message in messages %}
+        <p>{{ message|safe }}</p>
+    {% endfor %}
+{% endif %}
+{% endblock page-header %}
