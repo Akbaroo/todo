@@ -4,7 +4,8 @@ from django.utils.translation import gettext_lazy as _
 
 
 class UserManager(UserManager):
-    pass
+    def create_superuser(self, *args, **kwargs):
+        return super().create_superuser(is_verified=True, *args, **kwargs)
 
 
 class User(AbstractUser):
